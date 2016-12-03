@@ -59,12 +59,8 @@ public class RegisteredActionListener implements ActionListener {
 
         CloseableHttpClient client = HttpClientBuilder.create().build();
 
-        List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
-        urlParameters.add(new BasicNameValuePair("name", name));
-        urlParameters.add(new BasicNameValuePair("lastName", lastName));
-        urlParameters.add(new BasicNameValuePair("email", email));
-        urlParameters.add(new BasicNameValuePair("age", age));
-        urlParameters.add(new BasicNameValuePair("hobby", hobby));
+        List<NameValuePair> urlParameters = SaveButtonActionListener.getNameValuePairs(name, lastName, email, age, hobby);
+
 
         log.info("URL parameters" + urlParameters);
 
